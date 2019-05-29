@@ -1,0 +1,11 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: cassandra-testcontainer-test
+  autoconfigure.exclude: org.springframework.boot.autoconfigure.data.cassandra.CassandraDataAutoConfiguration
+
+cassandra:
+  contactpoints:
+  port:
+  keyspace: myspace
