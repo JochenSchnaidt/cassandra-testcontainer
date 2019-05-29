@@ -32,7 +32,7 @@ public class PersonServiceImplTest extends CassandraTest {
   @BeforeClass
   public static void init() {
 
-    session = new Cluster.Builder().withoutMetrics().addContactPoints(azureContainer.getContainerIpAddress() ).withPort(azureContainer.getMappedPort(9042)).build().connect();
+    session = new Cluster.Builder().withoutMetrics().addContactPoints(cassandraContainer.getContainerIpAddress() ).withPort(cassandraContainer.getMappedPort(9042)).build().connect();
 
     session.execute("CREATE KEYSPACE myspace WITH replication = {'class':'SimpleStrategy', 'replication_factor':'1'};");
     session.execute("CREATE TABLE myspace.person (id text, name text, age int, PRIMARY KEY (id));");
